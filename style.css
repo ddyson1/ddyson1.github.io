@@ -6,7 +6,7 @@
  #main {
    border: 2px #40bf80 solid;
    padding: 30px;
-   margin: 4vh 0vw 5vh 25vw;
+   margin: 5vh 0vw 5vh 24vw;
    padding: 4vmin;
  }
 
@@ -54,11 +54,11 @@
 
  @media (max-width: 1024px) {
      body {
-         margin: 5vh 5vw 0vh 5vw;
+         margin: auto;
      }
      p {
          line-height: 2.7vmax;
-         font-size: 1.75vmax;
+         font-size: 1.65vmax;
      }
  }
 
