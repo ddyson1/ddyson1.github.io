@@ -10,6 +10,10 @@
    padding: 4vmin;
  }
 
+#name {
+  padding-bottom: 10px;
+}
+
  body {
      font-family: Avenir, Arial, sans-serif;
      color: #2B0066;
