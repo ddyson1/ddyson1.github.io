@@ -1,4 +1,4 @@
-#body  {
+ #body  {
    text-align: left;
    width: auto;
  }
@@ -10,9 +10,9 @@
    padding: 4vmin;
  }
 
-#name {
-  padding-bottom: 10px;
-}
+ #name {
+    padding-bottom: 10px;
+ }
 
  body {
      font-family: Avenir, Arial, sans-serif;
@@ -64,6 +64,12 @@
          line-height: 2.7vmax;
          font-size: 1.65vmax;
      }
+     #main {
+       border: 0px;
+       margin: 2vh 0vw 2vh 6vw;
+       padding: 4vmin;
+     }
+
  }
 
 .tabs-left, .tabs-right {
@@ -96,7 +102,7 @@
 .tabs-right>li.active>a,
 .tabs-right>li.active>a:hover,
 .tabs-right>li.active>a:focus {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 3px solid #ddd;
   border-left-color: transparent;
 }
 .tabs-left>li>a {
