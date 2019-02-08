@@ -24,7 +24,7 @@
                         <h1 id="name"><span>DEVIN DYSON<span style="color:#000000;">¹</span></h1>
                         <p>Graduated from <a target="_blank" href="http://www.ithaca.edu/">Ithaca College</a> in May 2016 with a B.S. in Business Administration and a concentration in International Business.</p>
                         <p>Today, Devin is living in Boston, Massachusetts where he is pursuing a career in academia. He is passionate about emerging technology, energy markets, and economic development.</p>
-                        <p>In his free time, DD can be found at the <a target="_blank" href="https://www.bpl.org/">BPL</a> with his head in a nook, running around Cambridge training for an <a target="_blank" href="https://online.crohnscolitisfoundation.org/site/Donation2?idb=968260254&df_id=27402&FR_ID=8086&mfc_pref=T&PROXY_ID=3738800&PROXY_TYPE=20&27402.donation=form1">Ironman 70.3</a>, or loafting around <a target="_blank" href="https://en.wikipedia.org/wiki/Davis_Square">Davis Square</a>.</p>
+                        <p>In his free time, DD can be found at the <a target="_blank" href="https://www.bpl.org/">BPL</a> with his head in a nook, running around Cambridge for an <a target="_blank" href="https://online.crohnscolitisfoundation.org/site/Donation2?idb=968260254&df_id=27402&FR_ID=8086&mfc_pref=T&PROXY_ID=3738800&PROXY_TYPE=20&27402.donation=form1">Ironman 70.3</a>, or loafting around <a target="_blank" href="https://en.wikipedia.org/wiki/Davis_Square">Davis Square</a>.</p>
                         <p>DD's favorite publications include the <a target="_blank" href="https://www.technologyreview.com/">MIT Technology Review</a> and <a target="_blank" href="http://www.economist.com/">The Economist</a>, defering to <a target="_blank" href="https://arxiv.org">arXiv</a> for research-latent material, and <a target="_blank" href="https://medium.com/@ddyson1">Medium</a> for opinion.</p>
                         <p>To get in touch, please check out his <a target="_blank" href="resume.pdf">resume,</a> or connect with him on <a target="_blank" href="https://www.linkedin.com/in/devindyson/">LinkedIn</a>. If you're a dev, fork some of his latest projects on <a target="_blank" href="https://devpost.com/ddyson1?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">Devpost</a> and or <a target="_blank" href="https://github.com/ddyson1">GitHub</a>!</p>
                         <br><hr><br>
@@ -35,16 +35,9 @@
                         </div>
                       </div>
                       <div class="tab-pane" id="beliefs-vr">
-                        <h1>Virtues <a href="https://jods.mitpress.mit.edu/pub/designandscience">source</a></h1>
-                        <p>some inspiration as a placeholder^</p></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p>.</p>
-                      </div>
-                      <div class="tab-pane" id="messages-vr">
                         <h1>Tralfmadorian¹</h1>
-                        <img src="mindmap19.png" alt="mindmap 2019">
-                      </div>
-                      <div class="tab-pane" id="profile-vr">
-                        <h1>Travelogues</h1>
-                          <p>fixing this bit</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p>.</p>
+                        <p>some inspiration from <a href="https://jods.mitpress.mit.edu/pub/designandscience">source</a></p>
+                        <img src="mindmap_tralfmadorian.png" alt="mindmap 2019">
                       </div>
                       <div class="tab-pane" id="settings-vr">
                         <h1>Books I've Read</h1>
@@ -160,6 +153,26 @@
                           <li><a target='_blank' href=http://duckduckgo.com/?q=a+computer+perspective+by+eames>A COMPUTER PERSPECTIVE by Eames</a></li>
                           <li><a target='_blank' href=http://duckduckgo.com/?q=python+crash+course+by+matthes >PYTHON CRASH COURSE by Matthes </a></li>
                       </div>
+                      <div class="tab-pane" id="profile-vr">
+                        <h1>Whitespace</h1>
+
+                          <br>
+
+                          <img id="myImg" src="project_images/minecraft_vm.png" alt="Minecraft VM" width="800" height="600">
+                          <!-- The Modal -->
+                          <div id="myModal" class="modal">
+                            <span class="close">×</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                          </div>
+
+                          <br>
+
+                      </div>
+                      <div class="tab-pane" id="messages-vr">
+                        <h1>Travelogues</h1>
+                        <p>fixing up some content for this tab...</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p>.</p>
+                      </div>
                   </div>
               </div>
 
@@ -169,9 +182,9 @@
                   <ul class="nav nav-tabs tabs-right vertical-text">
                       <li class="active"><a href="#home-vr" data-toggle="tab">Home</a></li>
                       <li><a href="#beliefs-vr" data-toggle="tab">Virtues</a></li>
-                      <li><a href="#messages-vr" data-toggle="tab">Whitespace</a></li>
-                      <li><a href="#profile-vr" data-toggle="tab">Travelogues</a></li>
                       <li><a href="#settings-vr" data-toggle="tab">Caxtons</a></li>
+                      <li><a href="#profile-vr" data-toggle="tab">Whitespace</a></li>
+                      <li><a href="#messages-vr" data-toggle="tab">Travelogues</a></li>
                   </ul>
               </div>
           </div>
@@ -189,5 +202,26 @@
           ga('create', 'UA-90916148-2', 'auto');
           ga('send', 'pageview');
 
+
+          // Get the modal
+          var modal = document.getElementById('myModal');
+
+          // Get the image and insert it inside the modal - use its "alt" text as a caption
+          var img = document.getElementById('myImg');
+          var modalImg = document.getElementById("img01");
+          var captionText = document.getElementById("caption");
+          img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+          }
+
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
         </script>
     </footer>
