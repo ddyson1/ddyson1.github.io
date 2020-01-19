@@ -1,0 +1,75 @@
+mindmap
+	
+	(to be attained) self-concept ideal
+		(what is) self-concept actual
+			(scope) structural component
+				(next steps) actionable chunks
+		
+	goals
+		health
+			endurance
+				swim
+				bike
+				run
+			meal prep
+				pescatarianism
+				eat vegetables 
+				drink green tea
+		wealth
+			budgeting
+				mint
+				excel cfp
+			savings
+				roth ira
+				robinhood
+			risk
+				crypto
+				seedinvest
+		community
+			build a family
+				find someone special
+				settle down 
+			illusion of permanence
+				digital embalming
+				write a book
+			
+	desires
+		nurture allotrope 
+			llc migration
+			tax filings
+			product actualization
+		web identity
+			digital library
+			travelogues
+			trajectory
+		meaningful relationships
+			work
+			academia
+			intimate
+		research projects
+			open source
+				news aggregator
+				python scraper 
+				principles coach
+			solid
+			0x
+			energy decentralization
+				notes and arc
+				citations
+				write
+			believability index
+				joi ito
+				alan kay
+				ray dalio
+				
+	fun
+		skydive with a wingsuit
+		cave dive in a blue hole
+		ice driving in scandinavia 
+		climb kilmanjaro
+		experience zero-g
+		visit more unesco whs
+		get back to sea
+				
+		
+		
