@@ -1,0 +1,20 @@
+* {
+  font-family: 'Helvetica';
+}
+
+body {
+  text-align: left;
+  padding-top: 15vh;
+  padding-left: 30vw;
+  padding-right: 30vw;
+  color: black;
+}
+
+div {
+  font-size: 24px;
+}
+
+footer {
+  padding-left: 0vw;
+  padding-right: 0vw;
+}
