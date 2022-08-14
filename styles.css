@@ -2,6 +2,14 @@
   font-family: 'Helvetica';
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    padding-top: 1vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+
 body {
   text-align: left;
   padding-top: 15vh;
