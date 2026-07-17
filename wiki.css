@@ -367,10 +367,10 @@ sup.noprint { font-size: 0.75em; line-height: 1; white-space: nowrap; font-style
   #logo { width: auto; padding: 0.3em 0; }
   #logo .globe { display: none; }
   #logo .tagline { display: none; }
-  .portal h3 { display: none; }
-  .portal { margin-top: 0; }
-  .portal ul { padding-left: 0; }
-  .portal li { display: inline-block; margin-right: 1em; }
+  /* Wikipedia's mobile skin hides sidebar navigation and the Read/Edit/View
+     history tabs behind a menu; hide them outright on small screens. */
+  .portal { display: none; }
+  #right-tabs ul { display: none; }
   #head { margin-left: 0; flex-direction: column-reverse; align-items: stretch; }
   #head .tabs { overflow-x: auto; }
   #p-search { margin: 0.4em 1em; }

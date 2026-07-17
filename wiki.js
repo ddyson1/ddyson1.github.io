@@ -59,6 +59,24 @@
     });
   }
 
+  // Wikipedia's mobile skin moves the infobox below the first lead paragraph;
+  // do the same on narrow screens, and restore the desktop position on wide ones.
+  var infobox = document.querySelector("#content .infobox");
+  if (infobox) {
+    var home = document.createComment("infobox-home");
+    infobox.parentNode.insertBefore(home, infobox);
+    var firstP = document.querySelector("#content > p");
+    var placeInfobox = function () {
+      if (window.innerWidth <= 850 && firstP) {
+        firstP.parentNode.insertBefore(infobox, firstP.nextSibling);
+      } else {
+        home.parentNode.insertBefore(infobox, home.nextSibling);
+      }
+    };
+    placeInfobox();
+    window.addEventListener("resize", placeInfobox);
+  }
+
   // 404 / missing-article page: fill in the searched-for title.
   var missing = document.getElementById("missing-title");
   if (missing) {
