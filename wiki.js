@@ -1,13 +1,18 @@
-// devindyson.com — search + random article for the encyclopedia skin.
+// devindyson.com — search, suggestions, and layout helpers for the encyclopedia skin.
 // Pages set <body data-root=""> (site root) or <body data-root="../"> (wiki/ pages).
 
 (function () {
   var PAGES = [
-    { title: "Devin Dyson", url: "index.html", aliases: ["devin", "dyson", "devin dyson", "main page", "bio"] },
-    { title: "Moodlog", url: "wiki/moodlog.html", aliases: ["moodlog llc", "mood log", "journaling", "journal"] },
-    { title: "MiG", url: "wiki/mig.html", aliases: ["mig", "russian", "vocabulary"] },
-    { title: "Plotflow", url: "wiki/plotflow.html", aliases: ["plot flow", "pen plotter", "plotter"] },
-    { title: "worldView", url: "wiki/worldview.html", aliases: ["world view", "dashboard"] }
+    { title: "Devin Dyson", url: "index.html", desc: "American entrepreneur and poet",
+      aliases: ["devin", "dyson", "devin dyson", "main page", "bio", "founder"] },
+    { title: "Moodlog", url: "wiki/moodlog.html", desc: "AI-powered journaling company",
+      aliases: ["moodlog llc", "mood log", "journaling", "journal", "founder"] },
+    { title: "MiG", url: "wiki/mig.html", desc: "Speed-reading vocabulary trainer for Russian",
+      aliases: ["mig", "russian", "vocabulary", "language"] },
+    { title: "Plotflow", url: "wiki/plotflow.html", desc: "Independent pen-plotter studio",
+      aliases: ["plot flow", "pen plotter", "plotter", "founder"] },
+    { title: "worldView", url: "wiki/worldview.html", desc: "Morning dashboard for global markets",
+      aliases: ["world view", "dashboard", "markets"] }
   ];
 
   var root = (document.body && document.body.getAttribute("data-root")) || "";
@@ -31,17 +36,135 @@
     return null;
   }
 
+  function suggestions(query) {
+    var q = norm(query);
+    if (!q) return [];
+    return PAGES.filter(function (p) {
+      if (norm(p.title).indexOf(q) !== -1) return true;
+      for (var i = 0; i < p.aliases.length; i++) {
+        if (p.aliases[i].indexOf(q) !== -1) return true;
+      }
+      return false;
+    });
+  }
+
+  var input = document.getElementById("searchInput");
   var form = document.getElementById("searchform");
+
+  function submitSearch() {
+    var q = input ? input.value : "";
+    var page = findPage(q);
+    if (page) {
+      window.location.href = root + page.url;
+    } else {
+      window.location.href = root + "404.html?search=" + encodeURIComponent(q);
+    }
+  }
+
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var input = document.getElementById("searchInput");
-      var q = input ? input.value : "";
-      var page = findPage(q);
-      if (page) {
-        window.location.href = root + page.url;
-      } else {
-        window.location.href = root + "404.html?search=" + encodeURIComponent(q);
+      submitSearch();
+    });
+  }
+
+  // Live typeahead, in the style of Wikipedia's search suggestions.
+  if (input && form) {
+    var box = document.createElement("div");
+    box.className = "suggestions";
+    box.style.display = "none";
+    form.appendChild(box);
+
+    var items = [];
+    var sel = -1;
+
+    function highlight(title, q) {
+      var i = title.toLowerCase().indexOf(q.toLowerCase());
+      if (i < 0 || !q) return document.createTextNode(title);
+      var frag = document.createDocumentFragment();
+      frag.appendChild(document.createTextNode(title.slice(0, i)));
+      var b = document.createElement("b");
+      b.textContent = title.slice(i, i + q.length);
+      frag.appendChild(b);
+      frag.appendChild(document.createTextNode(title.slice(i + q.length)));
+      return frag;
+    }
+
+    function setActive(n) {
+      sel = n;
+      for (var i = 0; i < items.length; i++) {
+        items[i].className = items[i].className.replace(" active", "") +
+          (i === sel ? " active" : "");
+      }
+    }
+
+    function hideBox() {
+      box.style.display = "none";
+      items = [];
+      sel = -1;
+    }
+
+    function render() {
+      var q = input.value.trim();
+      box.innerHTML = "";
+      items = [];
+      sel = -1;
+      if (!q) { hideBox(); return; }
+
+      suggestions(q).slice(0, 6).forEach(function (p) {
+        var a = document.createElement("a");
+        a.className = "suggestion";
+        a.href = root + p.url;
+        var t = document.createElement("span");
+        t.className = "s-title";
+        t.appendChild(highlight(p.title, q));
+        var d = document.createElement("span");
+        d.className = "s-desc";
+        d.textContent = p.desc;
+        a.appendChild(t);
+        a.appendChild(d);
+        box.appendChild(a);
+        items.push(a);
+      });
+
+      var f = document.createElement("a");
+      f.className = "suggestion s-containing";
+      f.href = "#";
+      f.textContent = "Search for pages containing “" + q + "”";
+      f.addEventListener("click", function (e) {
+        e.preventDefault();
+        submitSearch();
+      });
+      box.appendChild(f);
+      items.push(f);
+
+      box.style.display = "block";
+    }
+
+    // Keep focus in the input while clicking suggestions, so blur
+    // doesn't hide the box before the click lands.
+    box.addEventListener("mousedown", function (e) { e.preventDefault(); });
+
+    input.addEventListener("input", render);
+    input.addEventListener("focus", render);
+    input.addEventListener("blur", hideBox);
+    input.addEventListener("keydown", function (e) {
+      if (box.style.display === "none") return;
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setActive(sel < items.length - 1 ? sel + 1 : 0);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setActive(sel > 0 ? sel - 1 : items.length - 1);
+      } else if (e.key === "Enter" && sel >= 0) {
+        e.preventDefault();
+        if (items[sel].className.indexOf("s-containing") !== -1) {
+          submitSearch();
+        } else {
+          window.location.href = items[sel].href;
+        }
+      } else if (e.key === "Escape") {
+        hideBox();
       }
     });
   }

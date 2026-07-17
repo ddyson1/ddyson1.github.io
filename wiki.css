@@ -133,7 +133,42 @@ a.external {
   align-items: center;
   margin: 0.35em 0 0.35em 0.5em;
 }
-#p-search form { display: flex; }
+#p-search form { display: flex; position: relative; }
+
+/* Search typeahead, in the style of Wikipedia's suggestion dropdown */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #a2a9b1;
+  border-top: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  text-align: left;
+}
+a.suggestion, a.suggestion:visited {
+  display: block;
+  padding: 0.35em 0.6em;
+  color: #202122;
+  font-size: 13px;
+  cursor: pointer;
+}
+a.suggestion:hover, a.suggestion.active {
+  background: #eaf3ff;
+  text-decoration: none;
+}
+.suggestion .s-title { display: block; }
+.suggestion .s-desc {
+  display: block;
+  font-size: 11px;
+  color: #54595d;
+}
+a.suggestion.s-containing, a.suggestion.s-containing:visited {
+  border-top: 1px solid #eaecf0;
+  color: #36c;
+}
 #p-search input[type="search"] {
   width: 14em;
   padding: 0.35em 0.5em;
