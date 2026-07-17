@@ -292,6 +292,26 @@ sup.noprint { font-size: 0.75em; line-height: 1; white-space: nowrap; font-style
 .references li:target, sup.reference:target { background: #eaf3ff; }
 .cite-backlink { font-weight: bold; }
 
+/* ---------- Tables ---------- */
+
+.wikitable {
+  border-collapse: collapse;
+  background: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  font-size: 95%;
+  margin: 0.5em 0 1em 0;
+}
+.wikitable caption {
+  font-weight: bold;
+  font-size: 95%;
+  padding: 0.2em 0.4em;
+}
+.wikitable th, .wikitable td {
+  border: 1px solid #a2a9b1;
+  padding: 0.2em 0.6em;
+}
+.wikitable th { background: #eaecf0; text-align: center; }
+
 /* ---------- Boxes ---------- */
 
 .stub-notice, .ambox {
