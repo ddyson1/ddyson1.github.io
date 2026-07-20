@@ -3,7 +3,7 @@
 
 (function () {
   var PAGES = [
-    { title: "Devin Dyson", url: "index.html", desc: "American entrepreneur and poet",
+    { title: "Devin Dyson", url: "index.html", desc: "Computer scientist and web developer",
       aliases: ["devin", "dyson", "devin dyson", "main page", "bio", "founder"] },
     { title: "Moodlog", url: "wiki/moodlog.html", desc: "AI-powered journaling company",
       aliases: ["moodlog llc", "mood log", "journaling", "journal", "founder"] },
