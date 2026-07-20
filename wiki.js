@@ -3,10 +3,8 @@
 
 (function () {
   var PAGES = [
-    { title: "Main Page", url: "index.html", desc: "Projects and work by Devin Dyson",
-      aliases: ["main page", "home", "index", "front page"] },
-    { title: "Devin Dyson", url: "wiki/devin-dyson.html", desc: "Computer scientist and web developer",
-      aliases: ["devin", "dyson", "devin dyson", "bio", "about", "founder", "biography"] },
+    { title: "Devin Dyson", url: "index.html", desc: "American entrepreneur and poet",
+      aliases: ["devin", "dyson", "devin dyson", "main page", "bio", "founder"] },
     { title: "Moodlog", url: "wiki/moodlog.html", desc: "AI-powered journaling company",
       aliases: ["moodlog llc", "mood log", "journaling", "journal", "founder"] },
     { title: "MiG", url: "wiki/mig.html", desc: "Speed-reading vocabulary trainer for Russian",

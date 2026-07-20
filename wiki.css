@@ -327,49 +327,6 @@ sup.noprint { font-size: 0.75em; line-height: 1; white-space: nowrap; font-style
 .references li:target, sup.reference:target { background: #eaf3ff; }
 .cite-backlink { font-weight: bold; }
 
-/* ---------- Main page ---------- */
-
-.mp-welcome {
-  border: 1px solid #a7d7f9;
-  background: #f5faff;
-  text-align: center;
-  padding: 0.6em 1em;
-  margin-bottom: 1em;
-}
-#content .mp-welcome h2 {
-  font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
-  font-size: 1.5em;
-  font-weight: normal;
-  border: 0;
-  margin: 0;
-}
-.mp-welcome .mp-sub { font-size: 0.9em; color: #54595d; }
-
-.mp-grid { display: flex; flex-wrap: wrap; gap: 1em; }
-.mp-col { flex: 1 1 22em; min-width: 0; }
-
-.mp-box {
-  border: 1px solid #a3b0bf;
-  margin-bottom: 1em;
-}
-#content .mp-box h2 {
-  font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
-  font-size: 1.2em;
-  font-weight: normal;
-  background: #cedff2;
-  border: 0;
-  border-bottom: 1px solid #a3b0bf;
-  margin: 0;
-  padding: 0.2em 0.6em;
-}
-.mp-box .mp-body { padding: 0.6em 0.8em; }
-.mp-box.mp-featured { border-color: #a3bfb1; }
-#content .mp-box.mp-featured h2 { background: #cef2e0; border-bottom-color: #a3bfb1; }
-.mp-box.mp-projects { border-color: #afa3bf; }
-#content .mp-box.mp-projects h2 { background: #ddcef2; border-bottom-color: #afa3bf; }
-.mp-box .mp-body p { margin: 0.4em 0; }
-.mp-box .mp-body ul { margin: 0.3em 0 0.3em 1.4em; }
-
 /* ---------- Tables ---------- */
 
 .wikitable {
